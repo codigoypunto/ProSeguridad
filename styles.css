@@ -1,0 +1,196 @@
+*{
+    background-color: rgba(255, 0, 0, 0.08); /* debug */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'AASmartSans', sans-serif;
+}
+
+@keyframes myAnim {
+    0% {
+        animation-timing-function: ease-in;
+        opacity: 0;
+        transform: translateY(-250px)
+    }
+
+    38% {
+        animation-timing-function: ease-out;
+        opacity: 1;
+        transform: translateY(0)
+    }
+
+    55% {
+        animation-timing-function: ease-in;
+        transform: translateY(-65px)
+    }
+
+    72% {
+        animation-timing-function: ease-out;
+        transform: translateY(0)
+    }
+
+    81% {
+        animation-timing-function: ease-in;
+        transform: translateY(-28px)
+    }
+
+    90% {
+        animation-timing-function: ease-out;
+        transform: translateY(0)
+    }
+
+    95% {
+        animation-timing-function: ease-in;
+        transform: translateY(-8px)
+    }
+
+    to {
+        animation-timing-function: ease-out;
+        transform: translateY(0)
+    }
+}
+
+.myAnim {
+    animation: myAnim 2s ease 0s 1 normal forwards;
+}
+
+@font-face {
+    font-family: 'AASmartSans';
+    src: url('./src/fonts/AASmartSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.center {
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+
+    display: grid;
+    place-items: center;
+
+}
+
+.centerh {
+    display: grid;
+    place-items: center left;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #2a318b;
+    background-image: url("./src/images/background1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+
+    overflow: hidden; /*evitar scroll de la página */
+}
+header {
+    height: 10%;
+}
+
+#logoAnglo {
+    width: 150px;
+    margin: 1.5rem;
+}
+
+#app {
+    height: 90%;
+    width: 100%;
+}
+
+.controller {
+    height: 100%;
+}
+
+#caja {
+    width: 100vw;
+    height: 35vh;
+}
+
+#registro {
+    width: 100%;
+    justify-items: center;
+}
+
+h1, h2, p {
+    font-size: 32px;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+p {
+    font-size: 18px
+}
+
+#registrationForm {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+.entrada {
+    background: rgb(255, 255, 255);
+    color: blue;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid blue;
+    border-radius: 100px;
+    padding: 10px 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+button {
+    background: rgb(24, 6, 56);
+    color: rgb(255, 255, 255);
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 100px;
+    margin: 25px;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.presentacion {
+    width: 80%;
+}
+
+.viewer {
+    position: relative;
+    width: 100vw;
+    height: 50vh;
+    overflow: hidden;
+    background: black;
+    touch-action: none;
+}
+
+.imgContainer {
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+.imgRiesgo {
+    height: 100%; /* la imagen escala dentro del contenedor */
+    display: block;
+}
+
+.hotspot {
+  position: absolute;
+  border: 5px solid rgba(255, 0, 0, 0.6); /* debug */
+  border-radius: 50%;
+  /* cursor: pointer; */
+  transform: translate(-50%, -50%);
+}
+
+.found {
+  border-color: lime;
+  border: 5px solid rgb(0, 200, 0);
+  /* background-color: rgba(0, 255, 0, 0.3);  */
+}

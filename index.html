@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <title>Seguridad Game</title>
+        <link rel="shortcut icon" href="src/images/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body >
+        <header class="myAnim centerh">
+            <img src="src/images/logoAngloamerica.svg" alt="logoAnglo" id="logoAnglo" class="logoAnglo">
+        </header>
+
+        <main id="app" class="app center">
+            
+            <section id="screen1" class="screen myAnim">
+                <div id="caja"></div>
+                
+                <div id="registro">
+                    <h1>Bienvenido</h1>
+                    <form method="post" id="registrationForm">
+                        <input type="text" id="dni" class="entrada" name="dni" required placeholder="DNI/CARNÉ DE EXTRANJERÍA">
+                        <input type="text" id="company" class="entrada" name="company" required placeholder="EMPRESA" autocomplete="off">
+                        <button type="submit">REGISTRARSE</button>
+                    </form>
+                </div>
+            </section>
+
+            <section id="screen2" class="screen center myAnim">
+                <div id="preCircunstancias" class="presentacion">
+                    <h2>Circunstancias Peligrosas</h2>
+                    <p>En la siguiente imagen, DETÉNGASE, OBSERVE Y ANALICE, los peligros.</p>
+                    <p>ARRASTRE Y TOQUE LA IMAGEN para encontrarlos.</p>
+                </div>
+            </section>
+
+            <section id="screen3" class="screen center myAnim">
+                <h2>Circunstancias</h2>
+                <div id="viewer3" class="viewer">
+                <div class="imgContainer" id="imgContainer3">
+                    <img src="./src/images/riesgo3.png" class="imgRiesgo" id="imgRiesgo3">
+
+                    <!-- Hotspots relativos a la imagen -->
+                    <div class="hotspot" style="left: 41%; top: 76%; width: 12%; height: 20%;" data-name="polvo"></div>
+                    <div class="hotspot" style="left: 73%; top: 78%; width: 12%; height: 20%;" data-name="cono"></div>
+                    <div class="hotspot" style="left: 85%; top: 85%; width: 12%; height: 20%;" data-name="sombrero"></div>
+                </div>
+            </div>
+            </section>
+
+            <section id="screen4" class="screen center myAnim">
+                <div id="preCircunstancias" class="presentacion">
+                    <h2>Comportamientos Peligrosos</h2>
+                    <p>En la siguiente imagen, DETÉNGASE, OBSERVE Y ANALICE, los peligros.</p>
+                    <p>ARRASTRE Y TOQUE LA IMAGEN para encontrarlos.</p>
+                </div>
+            </section>
+
+            <section id="screen5" class="screen center myAnim">
+                <h2>Comportamientos</h2>
+                <div id="viewer5" class="viewer">
+                <div class="imgContainer" id="imgContainer5">
+                    <img src="./src/images/riesgo5.png" class="imgRiesgo" id="imgRiesgo5">
+
+                    <!-- Hotspots relativos a la imagen -->
+                    <div class="hotspot" style="left: 41%; top: 76%; width: 12%; height: 20%;" data-name="1"></div>
+                    <div class="hotspot" style="left: 73%; top: 78%; width: 12%; height: 20%;" data-name="2"></div>
+                    <div class="hotspot" style="left: 85%; top: 85%; width: 12%; height: 20%;" data-name="3"></div>
+                </div>
+            </section>
+
+            <section id="screen6" class="screen center myAnim">
+                <p>pantalla 6</p><!-- DEV LOG -->
+                <h2>Interacciones</h2>
+            </section>
+
+            <section id="screen7" class="screen center myAnim">
+                <p>pantalla 7</p><!-- DEV LOG -->
+                <h2>Interacciones</h2>
+            </section>
+
+            <section id="screen8" class="screen center myAnim">
+                <p>pantalla 8</p><!-- DEV LOG -->
+                <h2>Puntajes</h2>
+            </section>
+
+            <section id="screen9" class="screen center myAnim">
+                <p>pantalla 9</p><!-- DEV LOG -->
+                <h2>Despedida</h2>
+            </section>
+
+            <section id="controller" class="controller">
+            <button id="btn-start" class="btn-next">Comenzar</button>
+            <button id="btn-next" class="btn-next">Continuar</button>
+        </section>
+
+        </main>
+
+        <script src="script.js"></script>
+        <script src="src/scripts/onloadScreen.js"></script>
+        
+        <script src="src/scripts/showScreen.js"></script>
+        <script src="src/scripts/userRegistro.js"></script>
+        <script src="src/scripts/touchDrag.js"></script>
+        
+    </body>
+</html>
