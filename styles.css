@@ -183,7 +183,7 @@ button {
 
 .hotspot {
   position: absolute;
-  border: 5px solid rgba(255, 0, 0, 0.6); /* debug */
+  /* border: 5px solid rgba(255, 0, 0, 0.6); /* debug */
   border-radius: 50%;
   /* cursor: pointer; */
   transform: translate(-50%, -50%);
