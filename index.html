@@ -51,34 +51,45 @@
             </section>
 
             <section id="screen4" class="screen center myAnim">
-                <div id="preCircunstancias" class="presentacion">
-                    <h2>Comportamientos Peligrosos</h2>
+                <div id="preConductas" class="presentacion">
+                    <h2>Conductas Peligrosos</h2>
                     <p>En la siguiente imagen, DETÉNGASE, OBSERVE Y ANALICE, los peligros.</p>
                     <p>ARRASTRE Y TOQUE LA IMAGEN para encontrarlos.</p>
                 </div>
             </section>
 
             <section id="screen5" class="screen center myAnim">
-                <h2>Comportamientos</h2>
+                <h2>Conductas</h2>
                 <div id="viewer5" class="viewer">
                 <div class="imgContainer" id="imgContainer5">
                     <img src="./src/images/riesgo5.png" class="imgRiesgo" id="imgRiesgo5">
 
                     <!-- Hotspots relativos a la imagen -->
-                    <div class="hotspot" style="left: 41%; top: 76%; width: 12%; height: 20%;" data-name="1"></div>
-                    <div class="hotspot" style="left: 73%; top: 78%; width: 12%; height: 20%;" data-name="2"></div>
-                    <div class="hotspot" style="left: 85%; top: 85%; width: 12%; height: 20%;" data-name="3"></div>
+                    <div class="hotspot" style="left: 32%; top: 65%; width: 12%; height: 20%;" data-name="dormir"></div>
+                    <div class="hotspot" style="left: 51%; top: 50%; width: 12%; height: 20%;" data-name="casco"></div>
+                    <div class="hotspot" style="left: 63.5%; top: 70%; width: 12%; height: 20%;" data-name="hombre"></div>
                 </div>
             </section>
 
             <section id="screen6" class="screen center myAnim">
-                <p>pantalla 6</p><!-- DEV LOG -->
-                <h2>Interacciones</h2>
+                <div id="preConductas" class="presentacion">
+                    <h2>Interacciones Peligrosas</h2>
+                    <p>En la siguiente imagen, DETÉNGASE, OBSERVE Y ANALICE, los peligros.</p>
+                    <p>ARRASTRE Y TOQUE LA IMAGEN para encontrarlos.</p>
+                </div>
             </section>
 
             <section id="screen7" class="screen center myAnim">
-                <p>pantalla 7</p><!-- DEV LOG -->
                 <h2>Interacciones</h2>
+                <div id="viewer7" class="viewer">
+                <div class="imgContainer" id="imgContainer7">
+                    <img src="./src/images/riesgo7.png" class="imgRiesgo" id="imgRiesgo7">
+
+                    <!-- Hotspots relativos a la imagen -->
+                    <div class="hotspot" style="left: 19%; top: 65%; width: 12%; height: 20%;" data-name="rotomartillo"></div>
+                    <div class="hotspot" style="left: 50.2%; top: 73%; width: 12%; height: 20%;" data-name="cable"></div>
+                    <div class="hotspot" style="left: 63%; top: 65%; width: 12%; height: 20%;" data-name="sombrero"></div>
+                </div>
             </section>
 
             <section id="screen8" class="screen center myAnim">
@@ -100,8 +111,9 @@
 
         <script src="script.js"></script>
         <script src="src/scripts/onloadScreen.js"></script>
-        
         <script src="src/scripts/showScreen.js"></script>
+        <script src="src/scripts/gameInit.js"></script>
+        <script src="src/scripts/calcularLimites.js"></script>
         <script src="src/scripts/userRegistro.js"></script>
         <script src="src/scripts/touchDrag.js"></script>
         

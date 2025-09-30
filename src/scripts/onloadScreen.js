@@ -1,5 +1,4 @@
 function onloadScreen (myScreen) {
-    // onloadContainer(myScreen);
     switch (myScreen) {
         case 1:
             console.log("cargando pantalla 1");
@@ -76,5 +75,5 @@ function onloadScreen (myScreen) {
     }
     showScreen(screenID);
     gameInit(myScreen);
-    console.log(score);
+    console.log("pantalla cargada");
 }

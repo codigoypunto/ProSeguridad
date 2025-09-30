@@ -1,12 +1,15 @@
 let screenID                = 1;
-let score                 = 0;
+let score                   = 0;
+let viewer                  = document.getElementById("viewer3");
+let imgRiesgo               = document.getElementById("imgRiesgo3");
+let container               = document.getElementById("imgContainer"+screenID);          
 
 const buttonStart           = document.getElementById('btn-start');
 const buttonNext            = document.getElementById('btn-next');
-// let container;
 
-
-
+let isDragging = false;
+let startX, actualX = 0;
+let minX, maxX;
 
 
 document.addEventListener(
@@ -17,7 +20,6 @@ document.addEventListener(
 
 buttonStart.addEventListener(
     "click", function() {
-        console.log("Boton start")
         screenID ++;
         onloadScreen(screenID);
     }
@@ -29,8 +31,3 @@ buttonNext.addEventListener(
         onloadScreen(screenID);
     }
 )
-
-function onloadContainer () {
-    
-    console.log(container);
-}
