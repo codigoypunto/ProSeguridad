@@ -2,7 +2,7 @@ let screenID                = 1;
 let score                   = 0;
 let viewer                  = document.getElementById("viewer3");
 let imgRiesgo               = document.getElementById("imgRiesgo3");
-let container               = document.getElementById("imgContainer"+screenID);          
+let container               = document.getElementById("imgContainer3");          
 
 const buttonStart           = document.getElementById('btn-start');
 const buttonNext            = document.getElementById('btn-next');
