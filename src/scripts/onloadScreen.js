@@ -1,5 +1,9 @@
 function onloadScreen (myScreen) {
     switch (myScreen) {
+        case 0:
+            screenControl(myScreen,0);
+            break;
+
         case 1:
             screenControl(myScreen,0);
             break;
@@ -27,50 +31,66 @@ function onloadScreen (myScreen) {
             break;
 
         case 8:
-            screenControl(myScreen,0);
+            screenControl(myScreen,1);
             break;
 
         default:
             screenID = 0;
-            screenControl(screenID  ,0);
+            onloadScreen(screenID);
     }
     showScreen(screenID);
     console.log("- Iniciando")
     gameInit(myScreen);
 
+    endGame();    
+
     console.log("PANTALLA CARGADA");
 }
 
-function screenControl (myScreen, gameOn) {
+function screenControl (myScreen, nextOn) {
     console.log("PANTALLA "+myScreen);
-    isGame = gameOn;
-    if (isGame && myScreen > 1) {
+    isNext = nextOn;
+    if (isNext && myScreen > 1) {
         document.body.style.backgroundImage = 'url("./src/images/background.png")';
-        document.getElementById("controller").style.display = 'block';
-        document.getElementById("btn-start").style.display = 'none';
-        document.getElementById("btn-next").style.display = "block";
+        CONTROLLER.style.display = 'block';
+        buttonStart.style.display = 'none';
+        buttonNext.style.display = "block";
+        buttonReset.style.display = "none";
 
         viewer                  = document.getElementById("viewer"+myScreen);
         imgRiesgo               = document.getElementById("imgRiesgo"+myScreen);
         container               = document.getElementById("imgContainer"+myScreen);
 
         isGame = false;
-    } else if (!isGame && myScreen > 1) {
+    } else if (!isNext && myScreen > 1) {
         document.body.style.backgroundImage = 'url("./src/images/background.png")';
-        document.getElementById("controller").style.display = 'block';
-        document.getElementById("btn-start").style.display = 'block';
-        document.getElementById("btn-next").style.display = "none";
-    } else if (!isGame && myScreen === 1) {
+        CONTROLLER.style.display = 'block';
+        buttonStart.style.display = 'block';
+        buttonNext.style.display = "none";
+        buttonReset.style.display = "none";
+    } else if (!isNext && myScreen === 1) {
         document.body.style.backgroundImage = 'url("./src/images/background1.png")';
-        document.getElementById("controller").style.display = 'none';
-        document.getElementById("btn-start").style.display = 'none';
-        document.getElementById("btn-next").style.display = "none";
-    } else if (!isGame && myScreen < 1) {
+        CONTROLLER.style.display = 'none';
+        buttonStart.style.display = 'none';
+        buttonNext.style.display = "none";
+        buttonReset.style.display = "none";
+    } else if (!isNext && myScreen < 1) {
         document.body.style.backgroundImage = 'url("./src/images/background.png")';
-        document.getElementById("controller").style.display = 'none';
-        document.getElementById("btn-start").style.display = 'none';
-        document.getElementById("btn-next").style.display = "none";
+        CONTROLLER.style.display = 'block';
+        buttonStart.style.display = 'none';
+        buttonNext.style.display = "none";
+        buttonReset.style.display = "block";
     }
-    
+}
 
+function endGame() {
+    console.log("- score: "+score);
+    E_SCORE.innerText = score;
+    if (score < 4) {
+        E_MENSAJE.innerText = "Intentalo otra vez";
+    } else if (score > 4 && score < 9) {
+        E_MENSAJE.innerText = "Puedes mejorar";
+    } else if (score == 9) {
+        E_MENSAJE.innerText = "¡LO LOGRASTE!";
+    }
 }

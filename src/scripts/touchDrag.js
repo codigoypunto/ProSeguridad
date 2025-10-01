@@ -34,6 +34,7 @@ function touchDrag () {
                     if (!hotspot.classList.contains("found")) {
                         hotspot.classList.add("found");
                         score++;
+                        
                     }
                 }
             );
