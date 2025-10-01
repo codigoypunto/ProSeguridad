@@ -1,32 +1,31 @@
 function gameInit(myScreen) {
     switch (myScreen) {
+        case 1:
+            console.log("- Registro")
+            break
+
         case 2:
-            container   = document.getElementById("imgContainer"+(myScreen+1));
+            onloadInit(myScreen);
             break
 
         case 3:
-            viewer      = document.getElementById("viewer"+myScreen);
-            imgRiesgo   = document.getElementById("imgRiesgo"+myScreen);
+            calcularLimites();
             break;
 
         case 4:
-            container   = document.getElementById("imgContainer"+(myScreen+1));
+            onloadInit(myScreen);
             break
 
         case 5:
-            viewer      = document.getElementById("viewer"+myScreen);
-            imgRiesgo   = document.getElementById("imgRiesgo"+myScreen);
-            container   = document.getElementById("imgContainer"+(myScreen));
+            calcularLimites();
             break;
 
         case 6:
-            container   = document.getElementById("imgContainer"+(myScreen+1));
+            onloadInit(myScreen);
             break
 
         case 7:
-            viewer      = document.getElementById("viewer"+myScreen);
-            imgRiesgo   = document.getElementById("imgRiesgo"+myScreen);
-            container   = document.getElementById("imgContainer"+(myScreen));
+            calcularLimites();
             break;
 
         default:
@@ -34,9 +33,10 @@ function gameInit(myScreen) {
             imgRiesgo   = document.getElementById("imgRiesgo3");
             container   = document.getElementById("imgContainer3");
     }
+}
 
-
-    console.log("iniciando");
-
-    calcularLimites();
+function onloadInit(myScreen) {
+    viewer      = document.getElementById("viewer"+(myScreen+1));
+    imgRiesgo   = document.getElementById("imgRiesgo"+(myScreen+1));
+    container   = document.getElementById("imgContainer"+(myScreen+1));
 }

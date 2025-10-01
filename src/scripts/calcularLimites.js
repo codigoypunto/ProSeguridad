@@ -1,4 +1,7 @@
 function calcularLimites() {
+
+    console.log("- calculando");
+
     const viewerWidth = viewer.offsetWidth;
     const imageRatio = imgRiesgo.naturalWidth / imgRiesgo.naturalHeight;
     const imageWidth = viewer.offsetHeight * imageRatio;
@@ -16,5 +19,6 @@ function calcularLimites() {
 
     actualX = (viewerWidth - imageWidth) / 2;
     container.style.left = `${actualX}px`;
-    console.log("calculos completados")
+
+    touchDrag();
 }

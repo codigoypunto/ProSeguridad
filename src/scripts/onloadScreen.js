@@ -1,79 +1,76 @@
 function onloadScreen (myScreen) {
     switch (myScreen) {
         case 1:
-            console.log("cargando pantalla 1");
-            document.body.style.backgroundImage = 'url("./src/images/background1.png")';
-            document.getElementById("controller").style.display = 'none';
-            document.getElementById("btn-start").style.display = 'none';
-            document.getElementById("btn-next").style.display = "none";
+            screenControl(myScreen,0);
             break;
         case 2:
-            console.log("cargando pantalla 2");
-            document.body.style.backgroundImage = 'url("./src/images/background.png")';
-            document.getElementById("controller").style.display = 'block';
-            document.getElementById("btn-start").style.display = 'block';
-            document.getElementById("btn-next").style.display = "none";
+            screenControl(myScreen,0);
             break;
         case 3:
-            console.log("cargando pantalla 3");
-            document.body.style.backgroundImage = 'url("./src/images/background.png")';
-            document.getElementById("controller").style.display = 'block';
-            document.getElementById("btn-start").style.display = 'none';
-            document.getElementById("btn-next").style.display = "block";
+            screenControl(myScreen,1);
             break;
 
         case 4:
-            console.log("cargando pantalla 4");
-            document.body.style.backgroundImage = 'url("./src/images/background.png")';
-            document.getElementById("controller").style.display = 'block';
-            document.getElementById("btn-start").style.display = 'block';
-            document.getElementById("btn-next").style.display = "none";
+            screenControl(myScreen,0);
             break;
 
         case 5:
-            console.log("cargando pantalla 5");
-            document.body.style.backgroundImage = 'url("./src/images/background.png")';
-            document.getElementById("controller").style.display = 'block';
-            document.getElementById("btn-start").style.display = 'none';
-            document.getElementById("btn-next").style.display = "block";
+            screenControl(myScreen,1);
             break;
 
         case 6:
-            console.log("cargando pantalla 6");
-            document.body.style.backgroundImage = 'url("./src/images/background.png")';
-            document.getElementById("controller").style.display = 'block';
-            document.getElementById("btn-start").style.display = 'block';
-            document.getElementById("btn-next").style.display = "none";
+            screenControl(myScreen,0);
             break;
 
         case 7:
-            console.log("cargando pantalla 7");
-            document.body.style.backgroundImage = 'url("./src/images/background.png")';
-            document.getElementById("controller").style.display = 'block';
-            document.getElementById("btn-start").style.display = 'none';
-            document.getElementById("btn-next").style.display = "block";
+            screenControl(myScreen,1);
             break;
 
         case 8:
-            console.log("cargando pantalla 8");
-            document.body.style.backgroundImage = 'url("./src/images/background.png")';
-            document.getElementById("controller").style.display = 'block';
-            document.getElementById("btn-start").style.display = 'none';
-            document.getElementById("btn-next").style.display = "block";
-            break;
-
-        case 9:
-            console.log("cargando pantalla 8");
-            document.body.style.backgroundImage = 'url("./src/images/background.png")';
-            document.getElementById("controller").style.display = 'none';
-            document.getElementById("btn-start").style.display = 'none';
-            document.getElementById("btn-next").style.display = "none";
+            screenControl(myScreen,0);
             break;
 
         default:
-            console.log("no hay pantallas");
+            screenID = 0;
+            screenControl(screenID  ,0);
     }
     showScreen(screenID);
+    console.log("- Iniciando")
     gameInit(myScreen);
-    console.log("pantalla cargada");
+
+    console.log("PANTALLA CARGADA");
+}
+
+function screenControl (myScreen, gameOn) {
+    console.log("PANTALLA "+myScreen);
+    isGame = gameOn;
+    if (isGame && myScreen > 1) {
+        document.body.style.backgroundImage = 'url("./src/images/background.png")';
+        document.getElementById("controller").style.display = 'block';
+        document.getElementById("btn-start").style.display = 'none';
+        document.getElementById("btn-next").style.display = "block";
+
+        viewer                  = document.getElementById("viewer"+myScreen);
+        imgRiesgo               = document.getElementById("imgRiesgo"+myScreen);
+        container               = document.getElementById("imgContainer"+myScreen);
+
+        isGame = false;
+    } else if (!isGame && myScreen > 1) {
+        document.body.style.backgroundImage = 'url("./src/images/background.png")';
+        document.getElementById("controller").style.display = 'block';
+        document.getElementById("btn-start").style.display = 'block';
+        document.getElementById("btn-next").style.display = "none";
+    } else if (!isGame && myScreen === 1) {
+        document.body.style.backgroundImage = 'url("./src/images/background1.png")';
+        document.getElementById("controller").style.display = 'none';
+        document.getElementById("btn-start").style.display = 'none';
+        document.getElementById("btn-next").style.display = "none";
+    } else if (!isGame && myScreen < 1) {
+        document.body.style.backgroundImage = 'url("./src/images/background.png")';
+        document.getElementById("controller").style.display = 'none';
+        document.getElementById("btn-start").style.display = 'none';
+        document.getElementById("btn-next").style.display = "none";
+    }
+    
+
 }
