@@ -13,6 +13,8 @@ const buttonReset           = document.getElementById("btn-reset");
 const E_SCORE               = document.getElementById("score");
 const E_MENSAJE             = document.getElementById("msg-score");
 
+const bg                    = document.getElementById("bg");
+
 let isDragging              = false;
 let startX, actualX         = 0;
 let minX, maxX;
@@ -42,6 +44,7 @@ buttonNext.addEventListener(
 
 buttonReset.addEventListener(
     "click", function() {
+        console.log("RESET");
         location.reload();
     }
 )

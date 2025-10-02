@@ -1,6 +1,7 @@
 function onloadScreen (myScreen) {
     switch (myScreen) {
         case 0:
+            bg.style.display = "block";
             document.body.style.backgroundImage = 'url("./src/images/background.png")';
             screenControl(myScreen,0);
             break;
@@ -58,10 +59,10 @@ function screenControl (myScreen, nextOn) {
     console.log("PANTALLA "+myScreen);
     isNext = nextOn;
     if (isNext && myScreen > 1) {
-        CONTROLLER.style.display = 'block';
-        buttonStart.style.display = 'none';
-        buttonNext.style.display = "block";
-        buttonReset.style.display = "none";
+        CONTROLLER.style.display    = 'block';
+        buttonStart.style.display   = 'none';
+        buttonNext.style.display    = "block";
+        buttonReset.style.display   = "none";
 
         viewer                  = document.getElementById("viewer"+myScreen);
         imgRiesgo               = document.getElementById("imgRiesgo"+myScreen);
@@ -69,21 +70,21 @@ function screenControl (myScreen, nextOn) {
 
         isGame = false;
     } else if (!isNext && myScreen > 1) {
-        CONTROLLER.style.display = 'block';
-        buttonStart.style.display = 'block';
-        buttonNext.style.display = "none";
-        buttonReset.style.display = "none";
+        CONTROLLER.style.display    = 'block';
+        buttonStart.style.display   = 'block';
+        buttonNext.style.display    = "none";
+        buttonReset.style.display   = "none";
     } else if (!isNext && myScreen === 1) {
-        
-        CONTROLLER.style.display = 'none';
-        buttonStart.style.display = 'none';
-        buttonNext.style.display = "none";
-        buttonReset.style.display = "none";
+        CONTROLLER.style.display    = 'none';
+        buttonStart.style.display   = 'none';
+        buttonNext.style.display    = "none";
+        buttonReset.style.display   = "none";
+        bg.style.display            = "none";
     } else if (!isNext && myScreen < 1) {
-        CONTROLLER.style.display = 'block';
-        buttonStart.style.display = 'none';
-        buttonNext.style.display = "none";
-        buttonReset.style.display = "block";
+        CONTROLLER.style.display    = 'block';
+        buttonStart.style.display   = 'none';
+        buttonNext.style.display    = "none";
+        buttonReset.style.display   = "block";
     }
 }
 
